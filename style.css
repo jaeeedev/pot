@@ -1,0 +1,1384 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --maingreen: #d0ddc5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: "Noto Sans KR", sans-serif;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.more {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px;
+  border: 1px solid #222;
+  text-align: center;
+}
+
+.more:hover {
+  background: var(--maingreen);
+  color: #222;
+}
+
+.titleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.innerHeader {
+  width: 100%;
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+}
+
+.pcGnb {
+  display: none;
+}
+
+.pcGnb input {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 2px;
+  padding-left: 10px;
+  line-height: 25px;
+  height: 25px;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchResult {
+  display: none;
+  z-index: 11;
+  position: absolute;
+  margin-top: 15px;
+  padding: 10px;
+  background: #f3f3f3;
+  width: 180px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+}
+
+.searchResult::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  border-top: 0px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f3f3f3;
+}
+
+.searchResult li {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.pcLnb li:hover > a {
+  color: rgb(98, 128, 38);
+}
+
+.pcInnerHeader {
+  display: none;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchBox i {
+  font-size: 15px;
+  color: #333;
+  margin-left: 5px;
+}
+
+/* 사이드바 */
+
+.nav {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 1111;
+  padding: 20px;
+  left: -100%;
+  transition: all 0.5s;
+  box-shadow: 3px 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.nav .closeIcon label {
+  margin-left: calc(100% - 20px);
+}
+
+.closeIcon i {
+  font-size: 25px;
+}
+
+.nav .sideNav {
+  width: 100%;
+  height: 100vh;
+}
+
+.navCheckbox {
+  display: none;
+}
+
+.navCheckbox:checked ~ .nav {
+  left: 0;
+}
+
+.sideNav li {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+  border-bottom: 1px solid #222;
+}
+
+.sideNav p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sideNav li a {
+  overflow: hidden;
+}
+
+.sideNav li a i {
+  float: right;
+}
+
+.sideNav li ul {
+  display: none;
+}
+
+.sideNav li ul li {
+  padding-left: 10px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+}
+
+.sideNav li ul li a {
+  color: white;
+  font-weight: 400;
+}
+
+.sideNav li ul li:last-child {
+  border: none;
+}
+
+.loginLink {
+  margin-right: 20px;
+}
+
+.signupLink {
+  margin-left: 20px;
+}
+
+/* 메인슬라이드 */
+
+.mainSlide {
+  margin-bottom: 10px;
+}
+
+.slideBox {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #ddd;
+  position: relative;
+}
+
+.slideBox img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideText {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.slideText h3 {
+  font-size: 2rem;
+}
+
+.slick-list {
+  width: 100% !important;
+}
+
+.slideText.sl01 > * {
+  color: white;
+}
+
+.slideText.sl02 > * {
+  color: white;
+}
+
+/* 모바일용 이동메뉴 */
+
+.mobileDirect {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mobileDirect div a {
+  width: 90px;
+  height: 90px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mobileDirect div a:active {
+  background: var(--maingreen);
+  color: #222;
+}
+
+/* 커뮤니티갤러리*/
+
+.gallery {
+  margin-bottom: 60px;
+}
+
+.galleryImg {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  background: #ddd;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.galleryText {
+  cursor: pointer;
+}
+
+.galleryText p {
+  font-size: 13px;
+}
+
+.galleryText h3 {
+  font-size: 16px;
+}
+
+.mobileInfoText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.mobileInfoText h4 {
+  font-size: 17px;
+}
+
+.mobileInfoText p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.more {
+  border: none;
+  background: #ddd;
+  padding: 4px 10px;
+}
+
+.galleryImg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.galleryPost {
+  margin-bottom: 20px;
+}
+
+.imgInfo {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
+  top: 50%;
+  right: 30%;
+  cursor: pointer;
+}
+
+.imgInfo::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  line-height: 10px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.infoText {
+  position: absolute;
+  width: 55%;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  border-radius: 1rem;
+  opacity: 0;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.imgInfo.info02 {
+  top: 50%;
+  right: 40%;
+}
+
+.infoText h4 {
+  font-size: 13px;
+}
+
+.infoText p {
+  font-size: 11px;
+}
+
+/* 추천 글 */
+
+.recommend {
+  padding-top: 20px;
+}
+
+.recommend p {
+  font-size: 12px;
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.scrollBox {
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
+
+.scrollBox::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scrollBox::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 1rem;
+}
+
+.scrollBox::-webkit-scrollbar-track {
+  background: transparent;
+  /*스크롤바 뒷 배경 색상*/
+}
+
+.recommendImgBox {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.recommendImgBox .recommendImg {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  background: #ddd;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recommendImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recommendText {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background: white;
+  bottom: 0;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.recoHash {
+  color: #777;
+  padding-top: 5px;
+}
+
+.hideRecommend {
+  background: #f3f3f3;
+  padding: 10px;
+  display: none;
+}
+
+.hideRecommend h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.hideRecommend p {
+  width: 100%;
+  overflow: visible;
+  white-space: inherit;
+  text-overflow: clip;
+  line-height: 1.8;
+}
+
+.hideRecommend p::before {
+  content: "특징";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  background: #222;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  color: white;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 1px 3px;
+}
+
+/* 웹진 */
+
+.webzineSlide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-list {
+  width: 85%;
+}
+
+.wz {
+  cursor: pointer;
+}
+
+.webzineSlide .wz .wzImg {
+  width: 150px;
+  height: 200px;
+  background: #ddd;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.webzineSlide .wz .wzImg:hover {
+  transform: scale(1.07);
+  box-shadow: 0 3px 7px 5px rgba(0, 0, 0, 0.1);
+}
+
+.webzineSlide .wz p {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.wz:nth-child(3),
+.wz:nth-child(4) {
+  display: none;
+}
+
+.wzImg {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wzImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 샵 */
+
+.productBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.product {
+  width: calc((100% - 10px) / 2);
+  cursor: pointer;
+}
+
+.productPrice::after {
+  margin-left: 5px;
+  content: "원";
+}
+
+/* .productImg {
+    background: #ddd;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.productImg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+} */
+.productImg {
+  width: 100%;
+  max-height: 65%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.productImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.productImg img:hover {
+  transform: scale(1.08);
+}
+
+.product p {
+  font-size: 13px;
+}
+
+.product .productReview {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+/* 푸터 */
+
+.footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+.footer h2 {
+  font-family: "Comfortaa", cursive;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 11px;
+  color: #888;
+}
+
+.footer .companyName {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #888;
+}
+
+.footer .copyright {
+  padding: 10px 0;
+}
+
+.topBtn a {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  background: #222;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.webzineSub {
+  background: var(--maingreen);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.innerContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.innerContent .innerText h3 {
+  font-size: 20px;
+}
+
+.innerContent .innerText p {
+  font-size: 14px;
+}
+
+.submitContent {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.submitContent .emailSubmit {
+  flex: 1;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid white;
+  color: #222;
+}
+
+.submitContent .emailSubmit:focus {
+  outline: none;
+  border: 1px solid rgb(150, 168, 134);
+}
+
+.submitContent .emailSubmitBtn {
+  border: none;
+  padding: 10px 15px;
+  background: #222;
+  color: white;
+  font-weight: 400;
+}
+
+.submitContent .emailSubmitBtn:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.afterSubmit {
+  display: none;
+  flex-direction: column;
+}
+
+.afterSubmit h3 {
+  font-size: 20px;
+  color: darkolivegreen;
+}
+
+.afterSubmit p {
+  font-size: 14px;
+}
+
+/* pick */
+
+.pickContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.pickContent .eachPick {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.pickContent .pickText .pickDesc {
+  display: none;
+}
+
+.pickTag {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.pickTag::before {
+  content: "CATEGORY";
+  font-weight: 700;
+  color: #222;
+  margin-right: 10px;
+}
+
+.pickText .pickTitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.pickText .writer {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.pickText .writer::after {
+  content: " 님의 글";
+}
+
+.pickImg {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pickImg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mobilePick .pickContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobilePick .pickContent li {
+  background: #f3f3f3;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.eachPick {
+  display: none;
+}
+
+.eachPick:nth-child(1) {
+  display: block;
+}
+
+.openContent {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  padding: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-top: 1px solid #222;
+}
+
+/* 기타 */
+
+.another .anotherWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.another .anotherWrap div {
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
+  position: relative;
+}
+
+.another .anotherWrap div i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.another .anotherWrap div h3 {
+  font-size: 16px;
+}
+
+.anotherWrap div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.anotherWrap div a:active {
+  background: var(--maingreen);
+}
+
+.mobileAnother {
+  display: none;
+}
+
+.another .anotherWrap .survey {
+  background: var(--maingreen);
+}
+
+@media all and (min-width: 426px) {
+  .sideNav li {
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #222;
+  }
+
+  .sideNav li ul li {
+    font-size: 16px;
+  }
+
+  .mobileDirect {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .mobileDirect div a {
+    width: 110px;
+    height: 110px;
+  }
+
+  .productBox {
+    gap: 20px;
+  }
+
+  .product {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .pickContent .eachPick:nth-child(2) {
+    display: block;
+  }
+
+  .pickContent .eachPick {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .infoText h4 {
+    font-size: 15px;
+  }
+
+  .infoText p {
+    font-size: 13px;
+  }
+
+  .galleryText h3 {
+    font-size: 18px;
+  }
+
+  .contact div a {
+    font-size: 16px;
+  }
+
+  .innerContent .innerText h3 {
+    font-size: 24px;
+  }
+
+  .afterSubmit h3 {
+    font-size: 24px;
+  }
+
+  .nav {
+    width: 80%;
+  }
+
+  .galleryPostBox {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+  }
+
+  .galleryPostBox .galleryPost {
+    flex: 1;
+  }
+
+  .galleryPostBox .galleryImg {
+    height: 100%;
+  }
+
+  .galleryPostBox .galleryImg img {
+    object-fit: cover;
+  }
+
+  .recommend {
+    padding-top: 40px;
+  }
+
+  .another .anotherWrap {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .another .anotherWrap .suggestion {
+    width: calc((100% - 10px) / 2);
+  }
+
+  .another .anotherWrap .advertise {
+    width: calc((100% - 10px) / 2);
+  }
+
+  .another {
+    display: none;
+  }
+
+  .mobileAnother {
+    display: block;
+  }
+
+  .mobileAnother .mobileAnotherWrap {
+    display: flex;
+    gap: 10px;
+  }
+
+  .mobileAnother .mobileAnotherWrap div {
+    flex: 1;
+  }
+
+  .mobileAnother .left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobileAnother .left div {
+    background: #f3f3f3;
+  }
+
+  .mobileAnother .right {
+    background: var(--maingreen);
+  }
+
+  .mobileAnother h3 {
+    font-size: 16px;
+  }
+
+  .mobileAnother a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .mobileAnother div a:active {
+    background: var(--maingreen);
+  }
+
+  .mobileAnother .right a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .mobileAnother .right a:active {
+    background: var(--maingreen);
+  }
+
+  .mobileAnother .left div {
+    position: relative;
+  }
+
+  .mobileAnother .left div i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+
+  .right a {
+    position: relative;
+  }
+
+  .mobileSurvey i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 27px;
+    height: 27px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: 550px) {
+  .mobilePick .pickContent {
+    flex-direction: row;
+  }
+
+  .mobilePick .pickContent li {
+    font-size: 14px;
+    width: calc((100% - 10px) / 2);
+  }
+}
+
+@media all and (min-width: 602px) {
+  .another .anotherWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .another .anotherWrap div {
+    flex: 1;
+  }
+
+  .pickImg {
+    width: 100%;
+    max-height: 370px;
+    overflow: hidden;
+  }
+
+  .pickImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .pickContent .pickText .pickDesc {
+    display: block;
+  }
+
+  .pickContent .pickText a .pickDesc {
+    font-size: 13px;
+    color: #555;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+
+  .recommend {
+    padding-top: 30px;
+  }
+
+  .nav {
+    width: 70%;
+  }
+
+  .wz:nth-child(3) {
+    display: block;
+  }
+
+  .slideBox {
+    width: 100%;
+    height: 300px;
+  }
+
+  .product {
+    width: calc((100% - 60px) / 4);
+  }
+
+  .mobileDirect div a {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .productImg {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .pickContent .eachPick:nth-child(3) {
+    display: block;
+  }
+
+  .mobilePick {
+    display: none;
+  }
+
+  .mobileInfoText {
+    display: none;
+  }
+
+  section {
+    margin-bottom: 60px;
+  }
+
+  .mobileDirect {
+    display: none;
+  }
+
+  .wz:nth-child(4) {
+    display: block;
+  }
+
+  .slideBox {
+    width: 100%;
+    height: 35vw;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .innerHeader {
+    display: none;
+  }
+
+  .pcInnerHeader {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pcInnerHeader .pcLnb {
+    display: flex;
+    gap: 10px;
+  }
+
+  .pcLnb li {
+    position: relative;
+    width: 130px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .pcLnb .hideLnb {
+    position: absolute;
+    top: 40px;
+    height: 0;
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .pcLnb .hideLnb li {
+    padding: 12px;
+  }
+
+  .hideLnb li a {
+    display: block;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pcLnb a {
+    color: #222;
+    font-size: 18px;
+  }
+
+  .nav {
+    display: none !important;
+  }
+
+  .innerHeader {
+    display: none;
+  }
+
+  .pcGnb {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+
+  .login {
+    display: flex;
+    gap: 10px;
+  }
+
+  .login a {
+    font-weight: 500;
+  }
+
+  .product {
+    flex: 1;
+  }
+
+  .noticeContents {
+    display: flex;
+    gap: 30px;
+  }
+
+  .noticeContents div {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .contact div a {
+    font-size: 17px;
+  }
+
+  .innerContent {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .innerContent .innerText {
+    flex: 1;
+  }
+
+  .innerContent .submitContent {
+    flex: 1.5;
+  }
+
+  .pickContent .eachPick {
+    width: calc((100% - 40px) / 3);
+  }
+
+  .pick {
+    display: block;
+  }
+
+  .imgInfo {
+    display: block;
+  }
+
+  .mobileAnother {
+    display: none;
+  }
+
+  .another {
+    display: block;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .pcInnerHeader {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: 1024px;
+  }
+
+  .gallery {
+    height: 485px;
+  }
+
+  .recommendImgBox {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  .scrollBox {
+    overflow: hidden;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .slideBox {
+    width: 100%;
+    height: 450px;
+  }
+
+  .innerFooter {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .pcGnb {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .innerContent {
+    width: 1024px;
+    margin: 0 auto;
+  }
+}

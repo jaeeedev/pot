@@ -1,606 +1,700 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pot</title>
-    <script src="https://kit.fontawesome.com/7cde33c3cd.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/7cde33c3cd.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="header" id="header">
-        <div class="pcGnb">
-            <div class="searchBox">
-                <input type="search" class="gnbSearch">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <div class="searchResult">
-                    <ul>
-                    </ul>
-                </div>
-            </div>
-            <div class="login">
-                <h5><a href="#!">로그인</a></h5>
-                <h5><a href="#!">회원가입</a></h5>
-            </div>
+      <div class="pcGnb">
+        <div class="searchBox">
+          <input type="search" class="gnbSearch" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="searchResult">
+            <ul></ul>
+          </div>
         </div>
+        <div class="login">
+          <h5><a href="#!">로그인</a></h5>
+          <h5><a href="#!">회원가입</a></h5>
+        </div>
+      </div>
 
-        <div class="pcInnerHeader">
-            <h1><a href="index.html">pot</a></h1>
-            <ul class="pcLnb">
-                <li><a href="#!">질문하기
-                        <ul class="hideLnb">
-                            <li><a href="#!">자주묻는 질문</a></li>
-                            <li><a href="#!">질문하기</a></li>
-                        </ul>
-                    </a></li>
-                <li><a href="#!">식물사전</a></li>
-                <li><a href="#!">커뮤니티
-                        <ul class="hideLnb">
-                            <li><a href="#!">커뮤니티 갤러리</a></li>
-                            <li><a href="#!">자유 게시판</a></li>
-                            <li><a href="#!">거래 게시판</a></li>
-                        </ul>
-                    </a></li>
-                <li><a href="#!">웹진
-                        <ul class="hideLnb">
-                            <li><a href="#!">웹진 보기</a></li>
-                            <li><a href="#!">정기구독 신청</a></li>
-                        </ul>
-                    </a></li>
-                <li><a href="#!">shop</a></li>
-            </ul>
-        </div>
-        <div class="innerHeader">
-            <h1><a href="index.html">pot</a></h1>
-            <label for="navCheckbox"><i class="fa-solid fa-bars"></i></label>
-        </div>
+      <div class="pcInnerHeader">
+        <h1><a href="index.html">pot</a></h1>
+        <ul class="pcLnb">
+          <li>
+            <a href="#!"
+              >질문하기
+              <ul class="hideLnb">
+                <li><a href="#!">자주묻는 질문</a></li>
+                <li><a href="#!">질문하기</a></li>
+              </ul>
+            </a>
+          </li>
+          <li><a href="#!">식물사전</a></li>
+          <li>
+            <a href="#!"
+              >커뮤니티
+              <ul class="hideLnb">
+                <li><a href="#!">커뮤니티 갤러리</a></li>
+                <li><a href="#!">자유 게시판</a></li>
+                <li><a href="#!">거래 게시판</a></li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="#!"
+              >웹진
+              <ul class="hideLnb">
+                <li><a href="#!">웹진 보기</a></li>
+                <li><a href="#!">정기구독 신청</a></li>
+              </ul>
+            </a>
+          </li>
+          <li><a href="#!">shop</a></li>
+        </ul>
+      </div>
+      <div class="innerHeader">
+        <h1><a href="index.html">pot</a></h1>
+        <label for="navCheckbox"><i class="fa-solid fa-bars"></i></label>
+      </div>
     </header>
 
-    <input type="checkbox" id="navCheckbox" class="navCheckbox">
+    <input type="checkbox" id="navCheckbox" class="navCheckbox" />
     <nav class="nav">
-        <div class="closeIcon">
-            <label for="navCheckbox"><i class="fa-solid fa-x"></i></label>
-        </div>
-        <ul class="sideNav">
-            <li><a href="#!" class="loginLink">로그인</a>|<a href="#!" class="signupLink">회원가입</a></li>
-            <li>
-                <p><a href="#!">식물 질문하기</a><i class="fa-solid fa-angle-down"></i></p>
-                <ul class="questionNav">
-                    <li><a href="#!">자주묻는 질문</a></li>
-                    <li><a href="#!">질문하기</a></li>
-                </ul>
-            </li>
-            <li><a href="#!">식물사전</a></li>
-            <li>
-                <p><a href="#!">커뮤니티</a><i class="fa-solid fa-angle-down"></i></p>
-                <ul class="communityNav">
-                    <li><a href="#!">커뮤니티갤러리</a></li>
-                    <li><a href="#!">자유 게시판</a></li>
-                    <li><a href="#!">거래 게시판</a></li>
-                </ul>
-            </li>
-            <li>
-                <p><a href="#!">웹진</a><i class="fa-solid fa-angle-down"></i></p>
-                <ul class="webzineNav">
-                    <li><a href="#!">웹진 보기</a></li>
-                    <li><a href="#!">정기구독 신청</a></li>
-                </ul>
-            </li>
-            <li><a href="#!">shop</a></li>
-        </ul>
+      <div class="closeIcon">
+        <label for="navCheckbox"><i class="fa-solid fa-x"></i></label>
+      </div>
+      <ul class="sideNav">
+        <li>
+          <a href="#!" class="loginLink">로그인</a>|<a
+            href="#!"
+            class="signupLink"
+            >회원가입</a
+          >
+        </li>
+        <li>
+          <p>
+            <a href="#!">식물 질문하기</a><i class="fa-solid fa-angle-down"></i>
+          </p>
+          <ul class="questionNav">
+            <li><a href="#!">자주묻는 질문</a></li>
+            <li><a href="#!">질문하기</a></li>
+          </ul>
+        </li>
+        <li><a href="#!">식물사전</a></li>
+        <li>
+          <p><a href="#!">커뮤니티</a><i class="fa-solid fa-angle-down"></i></p>
+          <ul class="communityNav">
+            <li><a href="#!">커뮤니티갤러리</a></li>
+            <li><a href="#!">자유 게시판</a></li>
+            <li><a href="#!">거래 게시판</a></li>
+          </ul>
+        </li>
+        <li>
+          <p><a href="#!">웹진</a><i class="fa-solid fa-angle-down"></i></p>
+          <ul class="webzineNav">
+            <li><a href="#!">웹진 보기</a></li>
+            <li><a href="#!">정기구독 신청</a></li>
+          </ul>
+        </li>
+        <li><a href="#!">shop</a></li>
+      </ul>
     </nav>
 
     <section class="mainSlide">
-        <div class="slideBox">
-            <picture>
-                <source media="(min-width:1280px)" srcset="img/cactus_1280.jpg">
-                <source media="(min-width:601px)" srcset="img/cactus_768.jpg">
-                <source media="(min-width:320px)" srcset="img/isaac-quesada-PhX4JO7Igr8-unsplash.jpg">
-                <img src="img/isaac-quesada-PhX4JO7Igr8-unsplash.jpg" alt="">
-            </picture>
-            <div class="slideText sl01">
-                <p>이달의 식물</p>
-                <h3>선인장의 매력</h3>
-            </div>
+      <div class="slideBox">
+        <picture>
+          <source media="(min-width:1280px)" srcset="img/cactus_1280.jpg" />
+          <source media="(min-width:601px)" srcset="img/cactus_768.jpg" />
+          <source
+            media="(min-width:320px)"
+            srcset="img/isaac-quesada-PhX4JO7Igr8-unsplash.jpg"
+          />
+          <img src="img/isaac-quesada-PhX4JO7Igr8-unsplash.jpg" alt="" />
+        </picture>
+        <div class="slideText sl01">
+          <p>이달의 식물</p>
+          <h3>선인장의 매력</h3>
         </div>
-        <div class="slideBox">
-            <picture>
-                <source media="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg">
-                <source media="(min-width:320px)" srcset="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg">
-                <img src="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg" alt="">
-            </picture>
-            <div class="slideText sl02">
-                <p>거실을 밝혀주는</p>
-                <h3>중형 화분 입문서</h3>
-            </div>
+      </div>
+      <div class="slideBox">
+        <picture>
+          <source media="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg" />
+          <source
+            media="(min-width:320px)"
+            srcset="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg"
+          />
+          <img src="img/vadim-kaipov-8ZELrodSvTc-unsplash.jpg" alt="" />
+        </picture>
+        <div class="slideText sl02">
+          <p>거실을 밝혀주는</p>
+          <h3>중형 화분 입문서</h3>
         </div>
-        <div class="slideBox">
-            <picture>
-                <source media="(min-width:1280px)" srcset="img/tulip_aj.jpg">
-                <source media="(min-width:601px)" srcset="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg">
-                <source media="(min-width:320px)" srcset="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg">
-                <img src="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg" alt="">
-            </picture>
-            <div class="slideText sl03">
-                <p>SHOP 인테리어 생화</p>
-                <h3>식탁 위에 생기 한스푼</h3>
-            </div>
+      </div>
+      <div class="slideBox">
+        <picture>
+          <source media="(min-width:1280px)" srcset="img/tulip_aj.jpg" />
+          <source
+            media="(min-width:601px)"
+            srcset="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg"
+          />
+          <source
+            media="(min-width:320px)"
+            srcset="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg"
+          />
+          <img src="img/amber-turner-9WNzqf_Y9a8-unsplash.jpg" alt="" />
+        </picture>
+        <div class="slideText sl03">
+          <p>SHOP 인테리어 생화</p>
+          <h3>식탁 위에 생기 한스푼</h3>
         </div>
+      </div>
     </section>
 
-
     <div class="container">
+      <section class="mobileDirect">
+        <div class="mobQna">
+          <a href="#!">
+            <p>질문하기</p>
+          </a>
+        </div>
+        <div class="mobDict">
+          <a href="#!">
+            <p>식물사전</p>
+          </a>
+        </div>
+        <div class="mobCommunity">
+          <a href="#!">
+            <p>커뮤니티</p>
+          </a>
+        </div>
+      </section>
+      <section class="gallery">
+        <div class="titleBox">
+          <h2><a href="#!">커뮤니티 갤러리</a></h2>
+          <a href="#!" class="more">바로가기</a>
+        </div>
 
-        <section class="mobileDirect">
-            <div class="mobQna">
-                <a href="#!">
-                    <p>질문하기</p>
-                </a>
+        <div class="galleryPostBox">
+          <div class="galleryPost">
+            <div class="galleryImg">
+              <picture>
+                <source media="(min-width:601px)" srcset="" />
+                <source media="(min-width:320px)" srcset="" />
+                <img src="./img/thanos-pal-I3S-Oha_5k4-unsplash.jpg" alt="" />
+              </picture>
+              <button type="button" class="imgInfo info01"></button>
+              <div class="infoText info01">
+                <h4>뱅갈고무나무</h4>
+                <p>
+                  21~25도 사이에서 키우며 중간 이상의 광도가 요구되어 거실
+                  창측이나 발코니에서 키우는 것이 좋음
+                </p>
+              </div>
+              <div class="mobileInfoText info01">
+                <h4>뱅갈고무나무</h4>
+                <p>
+                  21~25도 사이에서 키우며 중간 이상의 광도가 요구되어 거실
+                  창측이나 발코니에서 키우는 것이 좋음
+                </p>
+              </div>
             </div>
-            <div class="mobDict">
-                <a href="#!">
-                    <p>식물사전</p>
-                </a>
+            <div class="galleryText">
+              <p>박지은 님의 사진</p>
+              <div class="titleBox">
+                <h3>우리집 분위기를 살려주는 뱅갈고무나무</h3>
+              </div>
             </div>
-            <div class="mobCommunity">
-                <a href="#!">
-                    <p>커뮤니티</p>
-                </a>
-            </div>
-        </section>
-        <section class="gallery">
-            <div class="titleBox">
-                <h2><a href="#!">커뮤니티 갤러리</a></h2>
-                <a href="#!" class="more">바로가기</a>
-            </div>
-
-            <div class="galleryPostBox">
-
-                <div class="galleryPost">
-                    <div class="galleryImg">
-                        <picture>
-                            <source media="(min-width:601px)" srcset="">
-                            <source media="(min-width:320px)" srcset="">
-                            <img src="./img/thanos-pal-I3S-Oha_5k4-unsplash.jpg" alt="">
-                        </picture>
-                        <button type="button" class="imgInfo info01"></button>
-                        <div class="infoText info01">
-                            <h4>뱅갈고무나무</h4>
-                            <p>21~25도 사이에서 키우며 중간 이상의 광도가 요구되어 거실 창측이나 발코니에서 키우는 것이 좋음</p>
-
-                        </div>
-                        <div class="mobileInfoText info01">
-                            <h4>뱅갈고무나무</h4>
-                            <p>21~25도 사이에서 키우며 중간 이상의 광도가 요구되어 거실 창측이나 발코니에서 키우는 것이 좋음</p>
-                        </div>
-                    </div>
-                    <div class="galleryText">
-                        <p>박지은 님의 사진</p>
-                        <div class="titleBox">
-                            <h3>우리집 분위기를 살려주는 뱅갈고무나무</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="galleryPost">
-                    <div class="galleryImg post02">
-                        <picture>
-                            <source media="(min-width:601px)" srcset="">
-                            <source media="(min-width:320px)" srcset="">
-                            <img src="img/plant.jpg" alt="">
-                        </picture>
-                        <button type="button" class="imgInfo info02"></button>
-                        <div class="infoText info02">
-                            <h4>아레카야자</h4>
-                            <p>실내 환경 적응력이 좋아 비교적 쉽게 키울 수 있음. 가습기 역할과 전자파 차단 역할을 함.</p>
-
-                        </div>
-                        <div class="mobileInfoText info01">
-                            <h4>아레카야자</h4>
-                            <p>실내 환경 적응력이 좋아 비교적 쉽게 키울 수 있음. 가습기 역할과 전자파 차단 역할을 함.</p>
-                        </div>
-                    </div>
-
-                    <div class="galleryText">
-                        <p>제이 님의 사진</p>
-                        <div class="titleBox">
-                            <h3>거실을 빈티지하게 만드는 방법</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="recommend">
-            <p>혼자서도 쑥쑥</p>
-            <div class="titleBox">
-                <h2>초보자를 위한 식물</h2>
-            </div>
-            <div class="scrollBox">
-                <div class="recommendImgBox">
-                    <div class="recommendImg" data-index="0">
-                        <img src="./img/monstera.jpg" alt="추천식물이미지">
-                        <div class="recommendText">
-                            <p class="recoHash">#공기정화</p>
-                            <h4>몬스테라</h4>
-                            <p class="recoInfo">대표적으로 키우기 쉬운 식물인 몬스테라는 심장 모양의 둥근 잎이 깃털처럼 갈라져있고 군데군데 구멍이 나있는 특징이 있다. 또한
-                                잎에서는 광택이 나고 꽃은 흰
-                                색을 띤다. 여름에 번식하며 관리요구도가 낮아 초보자가 키우기 좋다. 중간에서 높은 광도를 요구해 거실 창측이나 발코니에 배치하는것이 좋으며 식물체에 독성을
-                                가지고 있어 어린이 주변에 두지 말아야 한다.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="recommendImg" data-index="1">
-                        <img src="./img/cac.jpg" alt="">
-                        <div class="recommendText">
-                            <p class="recoHash">#키우기 쉬운 #물을 적게 주는</p>
-                            <h4>스투키</h4>
-                            <p class="recoInfo">산세베리아의 한 종류인 스투키는 오이처럼 생긴 원통형 잎을 가지며 대표적인 공기 정화 식물로 알려져 있다. 일반적인 식물들과
-                                다르게 밤에 이산화탄소를 흡수하고 낮에 산소를 배출하는 특징이 있다. 스투키는 생명력이 강하여 초보자들이 키우기 쉽지만 과습에 취약하여 흙이 말랐을 때 물을
-                                주는 것이 좋다. 햇빛이 잘 드는 곳이나 그늘에서도 잘 자라지만 강한 직사광선은 잎을 타게 만들 수 있다.</p>
-                        </div>
-                    </div>
-                    <div class="recommendImg" data-index="2">
-                        <img src="./img/plantpot04.jpg" alt="">
-                        <div class="recommendText">
-                            <p class="recoHash">#인테리어</p>
-                            <h4> 소철</h4>
-                            <p class="recoInfo">
-                                소철은 온실이나 집안에서 가꾸는 관상수로 여름에 노란 꽃을 피운다. 관리 요구도가 낮아 초보자도 키울 수 있으며 거실이나 발코니에 배치하는것이 좋다.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="recommendImg" data-index="3">
-                        <img src="./img/palm.jpg" alt="">
-                        <div class="recommendText">
-                            <p class="recoHash">#중형 화분</p>
-                            <h4>야자류</h4>
-                            <p class="recoInfo">끈질긴 생명력으로 쉽게 키울 수 있는 야자. 그 중에서 아레카야자는 NASA가 지정한 실내공기 정화식물 중 가장 일등공신으로
-                                꼽힌다. 비교적 키우기 쉽지만 너무 강한 직사광선이나 건조한 공기는 피해야 한다. 가습기 역할을 할 만큼 증산량이 뛰어난 식물이다.</p>
-                        </div>
-                    </div>
-                    <div class="recommendImg" data-index="4">
-                        <img src="./img/rubbertree.jpg" alt="">
-                        <div class="recommendText">
-                            <p class="recoHash">#강한 생명력 #관상용</p>
-                            <h4>고무나무류</h4>
-                            <p class="recoInfo">
-                                포름알데히드 제거와 미세 먼지 흡수에 효과적인 고무나무는 가정에서 많이 키우는 식물중 하나다. 생육이 왕성하고 키우기 쉬운 식물이다. 멜라니 고무나무, 뱅갈
-                                고무나무, 인도 고무나무, 벤자민 고무나무 등이 유명하다.
-                                따뜻한 기후에서 자라는 식물이기 때문에 겨울에는 실내에서 키워야 냉해를 방지할 수 있다. 줄기를 자르면 나오는 하얀 고무 수액은 독성이 있어 직접 만지지 않는
-                                것을 권장한다.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hideRecommend">
-                <h3></h3>
-                <p></p>
-            </div>
-        </section>
-
-        <section class="webzine">
-            <div class="titleBox">
-                <h2>웹진</h2>
-                <a href="#!" class="more">이전 호 보러가기</a>
+          </div>
+          <div class="galleryPost">
+            <div class="galleryImg post02">
+              <picture>
+                <source media="(min-width:601px)" srcset="" />
+                <source media="(min-width:320px)" srcset="" />
+                <img src="img/plant.jpg" alt="" />
+              </picture>
+              <button type="button" class="imgInfo info02"></button>
+              <div class="infoText info02">
+                <h4>아레카야자</h4>
+                <p>
+                  실내 환경 적응력이 좋아 비교적 쉽게 키울 수 있음. 가습기
+                  역할과 전자파 차단 역할을 함.
+                </p>
+              </div>
+              <div class="mobileInfoText info01">
+                <h4>아레카야자</h4>
+                <p>
+                  실내 환경 적응력이 좋아 비교적 쉽게 키울 수 있음. 가습기
+                  역할과 전자파 차단 역할을 함.
+                </p>
+              </div>
             </div>
 
-            <div class="webzineSlide">
-                <div class="wz" data-index="0">
-                    <div class="wzImg">
-                        <img src="./img/wz06.png" alt="">
-                    </div>
-                    <p class="wzTitle">5월호</p>
-                </div>
-                <div class="wz" data-index="1">
-                    <div class="wzImg">
-                        <img src="./img/wz02.png" alt="">
-                    </div>
-                    <p class="wzTitle">4월호</p>
-                </div>
-                <div class="wz" data-index="2">
-                    <div class="wzImg">
-                        <img src="./img/wz03.png" alt="">
-                    </div>
-                    <p class="wzTitle">3월호</p>
-                </div>
-                <div class="wz" data-index="3">
-                    <div class="wzImg">
-                        <img src="./img/wz04.png" alt="">
-                    </div>
-                    <p class="wzTitle">2월호</p>
-                </div>
-                <div class="wz" data-index="5">
-                    <div class="wzImg">
-                        <img src="./img/wz05.png" alt="">
-                    </div>
-                    <p class="wzTitle">1월호</p>
-                </div>
-                <div class="wz" data-index="6">
-                    <div class="wzImg">
-                        <img src="./img/wz01.png" alt="">
-                    </div>
-                    <p class="wzTitle">(2021년) 12월호</p>
-                </div>
-                <div class="wz" data-index="7">
-                    <div class="wzImg">
-                        <img src="./img/wz07.png" alt="">
-                    </div>
-                    <p class="wzTitle">(2021년) 11월호</p>
-                </div>
+            <div class="galleryText">
+              <p>제이 님의 사진</p>
+              <div class="titleBox">
+                <h3>거실을 빈티지하게 만드는 방법</h3>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="recommend">
+        <p>혼자서도 쑥쑥</p>
+        <div class="titleBox">
+          <h2>초보자를 위한 식물</h2>
+        </div>
+        <div class="scrollBox">
+          <div class="recommendImgBox">
+            <div class="recommendImg" data-index="0">
+              <img src="./img/monstera.jpg" alt="추천식물이미지" />
+              <div class="recommendText">
+                <p class="recoHash">#공기정화</p>
+                <h4>몬스테라</h4>
+                <p class="recoInfo">
+                  대표적으로 키우기 쉬운 식물인 몬스테라는 심장 모양의 둥근 잎이
+                  깃털처럼 갈라져있고 군데군데 구멍이 나있는 특징이 있다. 또한
+                  잎에서는 광택이 나고 꽃은 흰 색을 띤다. 여름에 번식하며
+                  관리요구도가 낮아 초보자가 키우기 좋다. 중간에서 높은 광도를
+                  요구해 거실 창측이나 발코니에 배치하는것이 좋으며 식물체에
+                  독성을 가지고 있어 어린이 주변에 두지 말아야 한다.
+                </p>
+              </div>
+            </div>
+            <div class="recommendImg" data-index="1">
+              <img src="./img/cac.jpg" alt="" />
+              <div class="recommendText">
+                <p class="recoHash">#키우기 쉬운 #물을 적게 주는</p>
+                <h4>스투키</h4>
+                <p class="recoInfo">
+                  산세베리아의 한 종류인 스투키는 오이처럼 생긴 원통형 잎을
+                  가지며 대표적인 공기 정화 식물로 알려져 있다. 일반적인
+                  식물들과 다르게 밤에 이산화탄소를 흡수하고 낮에 산소를
+                  배출하는 특징이 있다. 스투키는 생명력이 강하여 초보자들이
+                  키우기 쉽지만 과습에 취약하여 흙이 말랐을 때 물을 주는 것이
+                  좋다. 햇빛이 잘 드는 곳이나 그늘에서도 잘 자라지만 강한
+                  직사광선은 잎을 타게 만들 수 있다.
+                </p>
+              </div>
+            </div>
+            <div class="recommendImg" data-index="2">
+              <img src="./img/plantpot04.jpg" alt="" />
+              <div class="recommendText">
+                <p class="recoHash">#인테리어</p>
+                <h4>소철</h4>
+                <p class="recoInfo">
+                  소철은 온실이나 집안에서 가꾸는 관상수로 여름에 노란 꽃을
+                  피운다. 관리 요구도가 낮아 초보자도 키울 수 있으며 거실이나
+                  발코니에 배치하는것이 좋다.
+                </p>
+              </div>
+            </div>
+            <div class="recommendImg" data-index="3">
+              <img src="./img/palm.jpg" alt="" />
+              <div class="recommendText">
+                <p class="recoHash">#중형 화분</p>
+                <h4>야자류</h4>
+                <p class="recoInfo">
+                  끈질긴 생명력으로 쉽게 키울 수 있는 야자. 그 중에서
+                  아레카야자는 NASA가 지정한 실내공기 정화식물 중 가장
+                  일등공신으로 꼽힌다. 비교적 키우기 쉽지만 너무 강한
+                  직사광선이나 건조한 공기는 피해야 한다. 가습기 역할을 할 만큼
+                  증산량이 뛰어난 식물이다.
+                </p>
+              </div>
+            </div>
+            <div class="recommendImg" data-index="4">
+              <img src="./img/rubbertree.jpg" alt="" />
+              <div class="recommendText">
+                <p class="recoHash">#강한 생명력 #관상용</p>
+                <h4>고무나무류</h4>
+                <p class="recoInfo">
+                  포름알데히드 제거와 미세 먼지 흡수에 효과적인 고무나무는
+                  가정에서 많이 키우는 식물중 하나다. 생육이 왕성하고 키우기
+                  쉬운 식물이다. 멜라니 고무나무, 뱅갈 고무나무, 인도 고무나무,
+                  벤자민 고무나무 등이 유명하다. 따뜻한 기후에서 자라는 식물이기
+                  때문에 겨울에는 실내에서 키워야 냉해를 방지할 수 있다. 줄기를
+                  자르면 나오는 하얀 고무 수액은 독성이 있어 직접 만지지 않는
+                  것을 권장한다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hideRecommend">
+          <h3></h3>
+          <p></p>
+        </div>
+      </section>
 
-        </section>
+      <section class="webzine">
+        <div class="titleBox">
+          <h2>웹진</h2>
+          <a href="#!" class="more">이전 호 보러가기</a>
+        </div>
+
+        <div class="webzineSlide">
+          <div class="wz" data-index="0">
+            <div class="wzImg">
+              <img src="./img/wz06.png" alt="" />
+            </div>
+            <p class="wzTitle">5월호</p>
+          </div>
+          <div class="wz" data-index="1">
+            <div class="wzImg">
+              <img src="./img/wz02.png" alt="" />
+            </div>
+            <p class="wzTitle">4월호</p>
+          </div>
+          <div class="wz" data-index="2">
+            <div class="wzImg">
+              <img src="./img/wz03.png" alt="" />
+            </div>
+            <p class="wzTitle">3월호</p>
+          </div>
+          <div class="wz" data-index="3">
+            <div class="wzImg">
+              <img src="./img/wz04.png" alt="" />
+            </div>
+            <p class="wzTitle">2월호</p>
+          </div>
+          <div class="wz" data-index="5">
+            <div class="wzImg">
+              <img src="./img/wz05.png" alt="" />
+            </div>
+            <p class="wzTitle">1월호</p>
+          </div>
+          <div class="wz" data-index="6">
+            <div class="wzImg">
+              <img src="./img/wz01.png" alt="" />
+            </div>
+            <p class="wzTitle">(2021년) 12월호</p>
+          </div>
+          <div class="wz" data-index="7">
+            <div class="wzImg">
+              <img src="./img/wz07.png" alt="" />
+            </div>
+            <p class="wzTitle">(2021년) 11월호</p>
+          </div>
+        </div>
+      </section>
     </div>
 
-
     <section class="webzineSub">
-        <div class="innerContent">
-            <div class="innerText">
-                <h3>웹진 구독하기</h3>
-                <p>pot의 웹진을 가장 빠르게 만나보세요.</p>
-            </div>
-            <form class="submitContent">
-                <input type="email" class="emailSubmit" placeholder="웹진을 받을 이메일을 입력해주세요" required>
-                <button class="emailSubmitBtn">구독</button>
-            </form>
-            <div class="afterSubmit">
-                <h3>감사합니다!</h3>
-                <p>웹진은 매달 초 이메일과 공식 홈페이지로 발행됩니다.</p>
-            </div>
+      <div class="innerContent">
+        <div class="innerText">
+          <h3>웹진 구독하기</h3>
+          <p>pot의 웹진을 가장 빠르게 만나보세요.</p>
         </div>
-
+        <form class="submitContent">
+          <input
+            type="email"
+            class="emailSubmit"
+            placeholder="웹진을 받을 이메일을 입력해주세요"
+            required
+          />
+          <button class="emailSubmitBtn">구독</button>
+        </form>
+        <div class="afterSubmit">
+          <h3>감사합니다!</h3>
+          <p>웹진은 매달 초 이메일과 공식 홈페이지로 발행됩니다.</p>
+        </div>
+      </div>
     </section>
 
-
     <div class="container">
-        <section class="shop">
-            <div class="titleBox">
-                <h2>SHOP</h2>
-                <a href="#!" class="more">바로가기</a>
-            </div>
-            <div class="productBox">
-                <div class="product">
-                    <div class="productImg">
-                        <img src="img/potholder.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <h4 class="productName">철제 화분 거치대</h4>
-                        <p class="productPrice">45,000</p>
-                        <p class="productReview">평점 4.5 리뷰 53</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="productImg">
-                        <img src="img/metalpot.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <h4 class="productName">유광 화분 3종</h4>
-                        <p class="productPrice">25,000</p>
-                        <p class="productReview">평점 4.3 리뷰 25</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="productImg">
-                        <img src="img/wc_product01.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <h4 class="productName">스테인리스 물뿌리개</h4>
-                        <p class="productPrice">27,000</p>
-                        <p class="productReview">평점 3.8 리뷰 15</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="productImg">
-                        <img src="img/wc_product02.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <h4 class="productName">물뿌리개(Yellow)</h4>
-                        <p class="productPrice">25,000</p>
-                        <p class="productReview">평점 4.3 리뷰 25</p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="pick">
-            <div class="titleBox">
-                <h2>볼만한 글</h2>
-                <a href="#!" class="more">바로가기</a>
-            </div>
-
-            <div class="pickContent">
-                <div class="eachPick" data-index="0">
-                    <div class="pickImg">
-                        <a href="#!">
-                            <img src="./img/pick01.jpg" alt="라탄 인테리어와 식물">
-                        </a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">화분, 인테리어</span>
-                        <h3 class="pickTitle"><a href="#!">식물과 잘 어울리는 라탄 인테리어</a></h3>
-                        <p class="writer">집이없어</p>
-                        <a href="#!">
-                            <p class="pickDesc">코로나로 인해 장기화된 재택근무로 지쳐가던 와중 라탄 인테리어를 발견하게 되었다. 발리를 연상시키는 듯한 분위기에 홀려 라탄
-                                가구들을
-                                잔뜩 구매했지만 어딘가 부족한 느낌을 지울 수 없었다.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="eachPick" data-index="1">
-                    <div class="pickImg">
-                        <a href="#!">
-                            <img src="./img/pick02.jpg" alt="진열장 위 식물과 디퓨저">
-                        </a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">팁, 인테리어</span>
-                        <h3 class="pickTitle"><a href="#!">밋밋한 진열장 채우기</a></h3>
-                        <p class="writer">멜론머스크</p>
-                        <a href="#!">
-                            <p class="pickDesc">것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되 있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
-                                무엇을
-                                행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는 앞이 말이다. 청춘이 인간의 시들어 들어 쓸쓸한 열락의 있는 있을 곳이 것이다. 두손을 속에서 없으면,
-                                그들은
-                                만천하의 그들의 풀밭에 그들에게 돋고, 황금시대다.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="eachPick" data-index="2">
-                    <div class="pickImg"><a href="#!">
-                            <img src="./img/pick03.jpg" alt="햇빛이 들어오는 집안 화분들"></a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">꽃, 화분, 팁</span>
-                        <h3 class="pickTitle"><a href="#!">포근한 분위기 연출하기</a></h3>
-                        <p class="writer">김건조</p>
-                        <a href="#!">
-                            <p class="pickDesc">새로 이사온 집에서 가장 좋아하는 점 중에 하나는 채광이다. 오후에 커튼을 젖혀놓으면 들어오는 노란 햇살은 집안의 분위기를
-                                따사롭게
-                                만들어준다. 이런 장점을 백배 살리고 싶어 식물을 조금 들였는데, 몇가지 팁을 공유하려고 한다.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="eachPick" data-index="3">
-                    <div class="pickImg">
-                        <a href="#!"><img src="./img/pick09.jpg" alt="북향 집에 반려식물 사진"></a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">화분, 팁</span>
-                        <h3 class="pickTitle"><a href="#!">북향 집에서 반려식물 키우기</a></h3>
-                        <p class="writer">김닥스</p>
-                        <a href="#!">
-                            <p class="pickDesc">것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되 있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
-                                무엇을
-                                행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는 앞이 말이다. 청춘이 인간의 시들어 들어 쓸쓸한 열락의 있는 있을 곳이 것이다. 두손을 속에서 없으면,
-                                그들은
-                                만천하의 그들의 풀밭에 그들에게 돋고, 황금시대다.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="eachPick" data-index="4">
-                    <div class="pickImg">
-                        <a href="#!">
-                            <img src="./img/pick04.jpg" alt="흰 꽃병에 흰 꽃 사진"></a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">꽃, 인테리어, 팁</span>
-                        <h3 class="pickTitle"><a href="#!">선물받은 꽃 오래 보관하는 법</a></h3>
-                        <p class="writer">독고선물</p>
-                        <a href="#!">
-                            <p class="pickDesc">사막이다. 미묘한 곳으로 인도하겠다는 사람은 지혜는 아름다우냐? 사랑의 못할 내려온 있을 그들의 아니다. 든 것이다.보라, 가진
-                                방황하였으며, 그들의 이것이다. 보내는 전인 속에 산야에 교향악이다.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="eachPick" data-index="5">
-                    <div class="pickImg">
-                        <a href="#!">
-                            <img src="./img/pick05.jpg" alt="액자와 마른 가지 화병들"></a>
-                    </div>
-                    <div class="pickText">
-                        <span class="pickTag">화분, 팁</span>
-                        <h3 class="pickTitle"><a href="#!">북향 집에서 반려식물 키우기</a></h3>
-                        <p class="writer">능히할수있다</p>
-                        <a href="#!">
-                            <p class="pickDesc">것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되 있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
-                                무엇을
-                                행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는 앞이 말이다.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <button type="button" class="openContent">더보기</button>
-        </section>
-
-
-
-        <section class="another">
-            <div class="titleBox">
-                <h2>기타 안내</h2>
-            </div>
-
-            <div class="anotherWrap">
-                <div class="suggestion">
-                    <a href="#!">
-                        <h3>문의하기</h3>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="advertise"><a href="#!">
-                        <h3>비즈니스 제안</h3>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="survey"><a href="#!">
-                        <h3>2022 pot 사용자 설문조사</h3>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="mobileAnother">
-            <div class="titleBox">
-                <h2>기타 안내</h2>
-            </div>
-
-            <div class="mobileAnotherWrap">
-                <div class="left">
-                    <div class="mobileSuggestion"><a href="#!">
-                            <h3>문의하기</h3>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="mobileAdvertise"><a href="#!">
-                            <h3>비즈니스 제안</h3>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="right">
-                    <a href="#!">
-                        <div class="mobileSurvey">
-                            <h3>2022 pot 사용자 설문조사</h3>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <div class="topBtn">
-            <a href="#header"><i class="fa-solid fa-arrow-up"></i></a>
+      <section class="shop">
+        <div class="titleBox">
+          <h2>SHOP</h2>
+          <a href="#!" class="more">바로가기</a>
         </div>
+        <div class="productBox">
+          <div class="product">
+            <div class="productImg">
+              <img src="img/potholder.jpg" alt="" />
+            </div>
+            <div class="productInfo">
+              <h4 class="productName">철제 화분 거치대</h4>
+              <p class="productPrice">45,000</p>
+              <p class="productReview">평점 4.5 리뷰 53</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="productImg">
+              <img src="img/metalpot.jpg" alt="" />
+            </div>
+            <div class="productInfo">
+              <h4 class="productName">유광 화분 3종</h4>
+              <p class="productPrice">25,000</p>
+              <p class="productReview">평점 4.3 리뷰 25</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="productImg">
+              <img src="img/wc_product01.jpg" alt="" />
+            </div>
+            <div class="productInfo">
+              <h4 class="productName">스테인리스 물뿌리개</h4>
+              <p class="productPrice">27,000</p>
+              <p class="productReview">평점 3.8 리뷰 15</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="productImg">
+              <img src="img/wc_product02.jpg" alt="" />
+            </div>
+            <div class="productInfo">
+              <h4 class="productName">물뿌리개(Yellow)</h4>
+              <p class="productPrice">25,000</p>
+              <p class="productReview">평점 4.3 리뷰 25</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pick">
+        <div class="titleBox">
+          <h2>볼만한 글</h2>
+          <a href="#!" class="more">바로가기</a>
+        </div>
+
+        <div class="pickContent">
+          <div class="eachPick" data-index="0">
+            <div class="pickImg">
+              <a href="#!">
+                <img src="./img/pick01.jpg" alt="라탄 인테리어와 식물" />
+              </a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">화분, 인테리어</span>
+              <h3 class="pickTitle">
+                <a href="#!">식물과 잘 어울리는 라탄 인테리어</a>
+              </h3>
+              <p class="writer">집이없어</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  코로나로 인해 장기화된 재택근무로 지쳐가던 와중 라탄
+                  인테리어를 발견하게 되었다. 발리를 연상시키는 듯한 분위기에
+                  홀려 라탄 가구들을 잔뜩 구매했지만 어딘가 부족한 느낌을 지울
+                  수 없었다.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="eachPick" data-index="1">
+            <div class="pickImg">
+              <a href="#!">
+                <img src="./img/pick02.jpg" alt="진열장 위 식물과 디퓨저" />
+              </a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">팁, 인테리어</span>
+              <h3 class="pickTitle"><a href="#!">밋밋한 진열장 채우기</a></h3>
+              <p class="writer">멜론머스크</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되
+                  있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
+                  무엇을 행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는
+                  앞이 말이다. 청춘이 인간의 시들어 들어 쓸쓸한 열락의 있는 있을
+                  곳이 것이다. 두손을 속에서 없으면, 그들은 만천하의 그들의
+                  풀밭에 그들에게 돋고, 황금시대다.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="eachPick" data-index="2">
+            <div class="pickImg">
+              <a href="#!">
+                <img src="./img/pick03.jpg" alt="햇빛이 들어오는 집안 화분들"
+              /></a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">꽃, 화분, 팁</span>
+              <h3 class="pickTitle"><a href="#!">포근한 분위기 연출하기</a></h3>
+              <p class="writer">김건조</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  새로 이사온 집에서 가장 좋아하는 점 중에 하나는 채광이다.
+                  오후에 커튼을 젖혀놓으면 들어오는 노란 햇살은 집안의 분위기를
+                  따사롭게 만들어준다. 이런 장점을 백배 살리고 싶어 식물을 조금
+                  들였는데, 몇가지 팁을 공유하려고 한다.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="eachPick" data-index="3">
+            <div class="pickImg">
+              <a href="#!"
+                ><img src="./img/pick09.jpg" alt="북향 집에 반려식물 사진"
+              /></a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">화분, 팁</span>
+              <h3 class="pickTitle">
+                <a href="#!">북향 집에서 반려식물 키우기</a>
+              </h3>
+              <p class="writer">김닥스</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되
+                  있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
+                  무엇을 행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는
+                  앞이 말이다. 청춘이 인간의 시들어 들어 쓸쓸한 열락의 있는 있을
+                  곳이 것이다. 두손을 속에서 없으면, 그들은 만천하의 그들의
+                  풀밭에 그들에게 돋고, 황금시대다.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="eachPick" data-index="4">
+            <div class="pickImg">
+              <a href="#!">
+                <img src="./img/pick04.jpg" alt="흰 꽃병에 흰 꽃 사진"
+              /></a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">꽃, 인테리어, 팁</span>
+              <h3 class="pickTitle">
+                <a href="#!">선물받은 꽃 오래 보관하는 법</a>
+              </h3>
+              <p class="writer">독고선물</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  사막이다. 미묘한 곳으로 인도하겠다는 사람은 지혜는 아름다우냐?
+                  사랑의 못할 내려온 있을 그들의 아니다. 든 것이다.보라, 가진
+                  방황하였으며, 그들의 이것이다. 보내는 전인 속에 산야에
+                  교향악이다.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="eachPick" data-index="5">
+            <div class="pickImg">
+              <a href="#!">
+                <img src="./img/pick05.jpg" alt="액자와 마른 가지 화병들"
+              /></a>
+            </div>
+            <div class="pickText">
+              <span class="pickTag">화분, 팁</span>
+              <h3 class="pickTitle">
+                <a href="#!">북향 집에서 반려식물 키우기</a>
+              </h3>
+              <p class="writer">능히할수있다</p>
+              <a href="#!">
+                <p class="pickDesc">
+                  것은 구하기 하는 능히 구할 수 이상은 인간의 것이다. 투명하되
+                  있는 어디 너의 설산에서 것은 뭇 같이, 넣는 부패뿐이다. 뛰노는
+                  무엇을 행복스럽고 있다. 물방아 풀이 시들어 커다란 꽃이 주는
+                  앞이 말이다.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="openContent">펼치기</button>
+      </section>
+
+      <section class="another">
+        <div class="titleBox">
+          <h2>기타 안내</h2>
+        </div>
+
+        <div class="anotherWrap">
+          <div class="suggestion">
+            <a href="#!">
+              <h3>문의하기</h3>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="advertise">
+            <a href="#!">
+              <h3>비즈니스 제안</h3>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="survey">
+            <a href="#!">
+              <h3>2022 pot 사용자 설문조사</h3>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobileAnother">
+        <div class="titleBox">
+          <h2>기타 안내</h2>
+        </div>
+
+        <div class="mobileAnotherWrap">
+          <div class="left">
+            <div class="mobileSuggestion">
+              <a href="#!">
+                <h3>문의하기</h3>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="mobileAdvertise">
+              <a href="#!">
+                <h3>비즈니스 제안</h3>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="right">
+            <a href="#!">
+              <div class="mobileSurvey">
+                <h3>2022 pot 사용자 설문조사</h3>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="topBtn">
+        <a href="#header"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="innerFooter">
-            <h2>pot</h2>
-            <p class="companyName">(주)팟가상컴퍼니</p>
-            <p>주소: 부산광역시 진구 부전동 012(가상의, 가상빌딩 7층)</p>
-            <p>대표: jaeee Park</p>
-            <p>전화: 010-25xx-4xx3</p>
-            <p>사업자등록번호: 123-45-67890 사업자정보확인</p>
-            <p>이메일: wldms1107@gmail.com</p>
-            <p class="copyright">Copyright 2022. potvirtual, Co., Ltd. All rights reserved</p>
-        </div>
+      <div class="innerFooter">
+        <h2>pot</h2>
+        <p class="companyName">(주)팟가상컴퍼니</p>
+        <p>주소: 부산광역시 진구 부전동 012(가상의, 가상빌딩 7층)</p>
+        <p>대표: jaeee Park</p>
+        <p>전화: 010-25xx-4xx3</p>
+        <p>사업자등록번호: 123-45-67890 사업자정보확인</p>
+        <p>이메일: wldms1107@gmail.com</p>
+        <p class="copyright">
+          Copyright 2022. potvirtual, Co., Ltd. All rights reserved
+        </p>
+      </div>
     </footer>
 
-
-    <script src="js/app.js"></script>
-</body>
-
+    <script src="js/app2.js"></script>
+  </body>
 </html>
